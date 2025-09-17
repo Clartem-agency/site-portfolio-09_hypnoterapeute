@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claire Moreau - Hypnothérapeute à Lyon | Retrouvez Calme et Confiance</title>
     
-    <!-- MODIFIÉ : Ajout de la balise pour l'image d'aperçu sur les réseaux sociaux -->
     <meta property="og:image" content="images/apercu-partage-social.webp">
     <meta name="twitter:image" content="images/apercu-partage-social.webp">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- MODIFIÉ : Ajout du CDN pour ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +99,6 @@
       .accordion-content-closed {
         max-height: 0;
       }
-      /* MODIFIÉ : Ajout de la classe pour l'image de fond du hero */
       .hero-background {
         background-image: url('images/hero-background.webp');
       }
@@ -136,14 +137,10 @@
         </nav>
 
         <main>
-
-                    <main>
             <!-- =================================================================
             Hero Section
             ================================================================== -->
             <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
-                <!-- MODIFIÉ : Les deux divs de fond ont été remplacés par un seul pour un meilleur contrôle. -->
-                <!-- Le dégradé est maintenant linéaire pour préserver la lisibilité du texte à gauche tout en révélant mieux l'image à droite. -->
                 <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(250, 250, 250, 0.95) 25%, rgba(250, 250, 250, 0.4) 60%, transparent), url('images/hero-background.webp');"></div>
                 
                 <div class="container mx-auto px-6 relative z-10">
@@ -163,45 +160,43 @@
                 </div>
             </section>
             
-
             <!-- =================================================================
-About Section
-================================================================== -->
-<section id="about" class="py-24 gradient-section">
-    <div class="container mx-auto px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Mon chemin vers l'hypnose, votre guide vers la sérénité</h2>
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                
-                <!-- MODIFIÉ : Colonne de l'image -->
-                <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-gentle relative">
-                    <img src="images/claire-moreau-portrait.webp" alt="Claire Moreau, Hypnothérapeute à Lyon" class="absolute inset-0 w-full h-full object-cover">
-                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/10 pointer-events-none"></div>
-                </div>
+            About Section
+            ================================================================== -->
+            <section id="about" class="py-24 gradient-section">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Mon chemin vers l'hypnose, votre guide vers la sérénité</h2>
+                        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                            
+                            <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-gentle relative">
+                                <!-- MODIFIÉ : Ajout de loading="lazy" -->
+                                <img src="images/claire-moreau-portrait.webp" alt="Claire Moreau, Hypnothérapeute à Lyon" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/10 pointer-events-none"></div>
+                            </div>
 
-                <!-- Colonne du texte -->
-                <div class="flex flex-col justify-center">
-                    <div class="gradient-card rounded-2xl p-8 shadow-soft">
-                        <h3 class="text-2xl font-semibold text-primary mb-4">Claire Moreau</h3>
-                        <p class="text-lg leading-relaxed text-foreground mb-4">Hypnothérapeute certifiée en Hypnose Ericksonienne</p>
-                        <p class="text-foreground leading-relaxed">Après plus de dix ans dans le marketing, j'ai découvert ma vocation : accompagner les femmes actives vers plus de sérénité et de confiance en elles. Mon approche allie pragmatisme et bienveillance pour vous aider à retrouver votre équilibre intérieur.</p>
+                            <div class="flex flex-col justify-center">
+                                <div class="gradient-card rounded-2xl p-8 shadow-soft">
+                                    <h3 class="text-2xl font-semibold text-primary mb-4">Claire Moreau</h3>
+                                    <p class="text-lg leading-relaxed text-foreground mb-4">Hypnothérapeute certifiée en Hypnose Ericksonienne</p>
+                                    <p class="text-foreground leading-relaxed">Après plus de dix ans dans le marketing, j'ai découvert ma vocation : accompagner les femmes actives vers plus de sérénité et de confiance en elles. Mon approche allie pragmatisme et bienveillance pour vous aider à retrouver votre équilibre intérieur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">Pendant plus de dix ans, j'ai navigué dans l'univers exigeant du marketing. Un monde passionnant, mais qui m'a peu à peu fait perdre pied. Les journées à rallonge, la pression constante de la performance et la charge mentale m'ont conduite là où beaucoup d'entre nous se retrouvent : dans le brouillard du surmenage. L'anxiété était devenue ma compagne de route, les nuits courtes, et la confiance en moi, un lointain souvenir. Je connais intimement cette sensation d'être un funambule sur un fil, cherchant désespérément un équilibre qui semble impossible à atteindre.</p>
+                            </div>
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">C'est dans cette quête de solutions que j'ai poussé la porte d'un cabinet d'hypnothérapie. Sans attente particulière, mais avec un immense besoin d'aide. Ce fut une révélation. Loin des clichés, j'ai découvert une approche incroyablement respectueuse et pragmatique. J'ai compris que l'hypnose n'était pas une perte de contrôle, mais au contraire, une formidable façon d'en reprendre. C'était une conversation avec la partie la plus sage de moi-même, celle qui avait les clés pour apaiser mes peurs et réactiver mes ressources. Cette expérience a transformé ma vie.</p>
+                            </div>
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">Cette transformation a fait naître en moi une évidence : je devais à mon tour transmettre ces outils. J'ai alors entrepris une formation certifiante rigoureuse en Hypnose Ericksonienne pour faire de cette passion mon métier. Aujourd'hui, ma mission est de vous accompagner sur ce même chemin. Je ne suis pas là pour vous donner des réponses magiques, mais pour vous guider, avec douceur et sans jugement, à trouver les vôtres. Mon approche est teintée de mon parcours : pragmatique, ancrée dans le réel, et profondément convaincue que vous possédez déjà en vous toutes les ressources pour aller mieux.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="space-y-8">
-                <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
-                    <p class="text-lg leading-relaxed text-foreground">Pendant plus de dix ans, j'ai navigué dans l'univers exigeant du marketing. Un monde passionnant, mais qui m'a peu à peu fait perdre pied. Les journées à rallonge, la pression constante de la performance et la charge mentale m'ont conduite là où beaucoup d'entre nous se retrouvent : dans le brouillard du surmenage. L'anxiété était devenue ma compagne de route, les nuits courtes, et la confiance en moi, un lointain souvenir. Je connais intimement cette sensation d'être un funambule sur un fil, cherchant désespérément un équilibre qui semble impossible à atteindre.</p>
-                </div>
-                <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
-                    <p class="text-lg leading-relaxed text-foreground">C'est dans cette quête de solutions que j'ai poussé la porte d'un cabinet d'hypnothérapie. Sans attente particulière, mais avec un immense besoin d'aide. Ce fut une révélation. Loin des clichés, j'ai découvert une approche incroyablement respectueuse et pragmatique. J'ai compris que l'hypnose n'était pas une perte de contrôle, mais au contraire, une formidable façon d'en reprendre. C'était une conversation avec la partie la plus sage de moi-même, celle qui avait les clés pour apaiser mes peurs et réactiver mes ressources. Cette expérience a transformé ma vie.</p>
-                </div>
-                <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
-                    <p class="text-lg leading-relaxed text-foreground">Cette transformation a fait naître en moi une évidence : je devais à mon tour transmettre ces outils. J'ai alors entrepris une formation certifiante rigoureuse en Hypnose Ericksonienne pour faire de cette passion mon métier. Aujourd'hui, ma mission est de vous accompagner sur ce même chemin. Je ne suis pas là pour vous donner des réponses magiques, mais pour vous guider, avec douceur et sans jugement, à trouver les vôtres. Mon approche est teintée de mon parcours : pragmatique, ancrée dans le réel, et profondément convaincue que vous possédez déjà en vous toutes les ressources pour aller mieux.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
             
             <!-- =================================================================
             Services Section
@@ -280,7 +275,7 @@ About Section
             <!-- =================================================================
             Approach Section
             ================================================================== -->
-            <section class="py-24 gradient-section">
+            <section id="approach" class="py-24 gradient-section">
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Le déroulé d'une séance, en toute sérénité</h2>
@@ -324,7 +319,7 @@ About Section
             <!-- =================================================================
             Cabinet Section
             ================================================================== -->
-            <section class="py-24 bg-background">
+            <section id="cabinet" class="py-24 bg-background">
                 <div class="container mx-auto px-6">
                     <div class="max-w-6xl mx-auto">
                         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -335,8 +330,8 @@ About Section
                             </div>
                             <div class="relative">
                                 <div class="rounded-2xl overflow-hidden shadow-gentle">
-                                    <!-- MODIFIÉ : Chemin et format de l'image -->
-                                    <img src="images/cabinet-hypnotherapie-lyon.webp" alt="Cabinet d'hypnothérapie de Claire Moreau à Lyon" class="w-full h-full object-cover">
+                                    <!-- MODIFIÉ : Ajout de loading="lazy" -->
+                                    <img src="images/cabinet-hypnotherapie-lyon.webp" alt="Cabinet d'hypnothérapie de Claire Moreau à Lyon" class="w-full h-full object-cover" loading="lazy">
                                 </div>
                                 <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none"></div>
                             </div>
@@ -348,7 +343,7 @@ About Section
             <!-- =================================================================
             Testimonials Section
             ================================================================== -->
-            <section class="py-24 gradient-section">
+            <section id="testimonials" class="py-24 gradient-section">
                 <div class="container mx-auto px-6">
                     <div class="text-center mb-16">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Leurs mots, votre confiance</h2>
@@ -391,7 +386,7 @@ About Section
             <!-- =================================================================
             FAQ Section
             ================================================================== -->
-            <section class="py-24 bg-background">
+            <section id="faq" class="py-24 bg-background">
                 <div class="container mx-auto px-6">
                     <div class="max-w-4xl mx-auto">
                         <div class="text-center mb-16">
@@ -443,7 +438,7 @@ About Section
                 </div>
             </section>
             
-                         <!-- =================================================================
+            <!-- =================================================================
             Booking Section
             ================================================================== -->
             <section id="booking" class="py-24 gradient-section">
@@ -452,9 +447,7 @@ About Section
                         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Prêt(e) à faire le premier pas ?</h2>
                         <p class="text-lg text-muted-foreground mb-12">Je vous propose un appel découverte gratuit de 15 minutes. C'est un temps d'échange simple et sans engagement pour faire connaissance et voir si mon approche vous correspond.</p>
                         
-                        <!-- Calendly Widget -->
                         <div class="bg-card rounded-2xl shadow-gentle text-left relative overflow-hidden border border-border">
-                            <!-- Badge -->
                             <div class="absolute top-0 right-0 transform origin-top-right">
                                 <div class="bg-gray-800 text-white text-xs font-bold uppercase tracking-wider py-1 px-8 transform rotate-45 translate-x-8 translate-y-4 shadow-md">
                                     Calendly
@@ -462,10 +455,9 @@ About Section
                             </div>
                             
                             <div class="grid grid-cols-1 lg:grid-cols-2">
-                                <!-- Left Panel: Information -->
                                 <div class="p-8 border-b lg:border-b-0 lg:border-r border-border flex flex-col">
                                     <div class="w-20 h-20 rounded-full overflow-hidden mb-4 border-4 border-accent">
-                                        <img src="images/claire-moreau-portrait.webp" alt="Portrait de Claire Moreau, Hypnothérapeute" class="w-full h-full object-cover">
+                                        <img src="images/claire-moreau-portrait.webp" alt="Portrait de Claire Moreau, Hypnothérapeute" class="w-full h-full object-cover" loading="lazy">
                                     </div>
                                     <p class="text-muted-foreground text-sm">Claire Moreau</p>
                                     <h3 class="text-2xl font-bold text-foreground mb-2">Appel Découverte (15 min)</h3>
@@ -506,7 +498,6 @@ About Section
                                     </p>
                                 </div>
 
-                                <!-- Right Panel: Calendar -->
                                 <div class="p-6 sm:p-8">
                                     <h4 class="text-lg font-semibold text-foreground mb-4">Sélectionnez la date et l'heure</h4>
                                     
@@ -521,7 +512,6 @@ About Section
                                     </div>
 
                                     <div class="grid grid-cols-7 gap-1 text-center text-sm">
-                                        <!-- Day headers -->
                                         <div class="text-muted-foreground font-medium py-2">LUN.</div>
                                         <div class="text-muted-foreground font-medium py-2">MAR.</div>
                                         <div class="text-muted-foreground font-medium py-2">MER.</div>
@@ -530,7 +520,6 @@ About Section
                                         <div class="text-muted-foreground font-medium py-2">SAM.</div>
                                         <div class="text-muted-foreground font-medium py-2">DIM.</div>
                                         
-                                        <!-- Dates -->
                                         <div class="py-2 text-gray-400">1</div>
                                         <div class="py-2 text-gray-400">2</div>
                                         <div class="py-2 text-gray-400">3</div>
@@ -594,7 +583,6 @@ About Section
                         </div>
                         <div class="grid lg:grid-cols-2 gap-12">
                             <div class="space-y-8">
-                                <!-- Coordinates Card -->
                                 <div class="gradient-card shadow-soft border-0 rounded-2xl p-6">
                                     <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary flex items-center gap-3 mb-6">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -607,7 +595,6 @@ About Section
                                         <div><p class="font-medium text-foreground">Horaires</p><p class="text-muted-foreground">Sur rendez-vous, du Lundi au Vendredi, de 9h à 19h</p></div>
                                     </div>
                                 </div>
-                                <!-- Transport Card -->
                                 <div class="gradient-card shadow-soft border-0 rounded-2xl p-6">
                                     <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary flex items-center gap-3 mb-6">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
@@ -620,7 +607,6 @@ About Section
                                     </div>
                                 </div>
                             </div>
-                            <!-- Contact Form Card -->
                             <div class="gradient-card shadow-soft border-0 h-fit rounded-2xl p-6">
                                 <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary mb-6">Envoyez-moi un message</h3>
                                 <form class="space-y-6">
@@ -681,21 +667,20 @@ About Section
         </footer>
     </div>
     
+    <!-- MODIFIÉ : Le script a été enrichi avec ScrollReveal -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // --- Smooth Scrolling ---
+        // --- Smooth Scrolling (déjà présent et fonctionnel) ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
                     if (!mobileMenu.classList.contains('hidden')) {
                          mobileMenu.classList.add('hidden');
                     }
-                    // Scroll to element
                     targetElement.scrollIntoView({
                         behavior: 'smooth'
                     });
@@ -714,7 +699,6 @@ About Section
         const accordion = document.getElementById('faq-accordion');
         if (accordion) {
             const triggers = accordion.querySelectorAll('.accordion-trigger');
-
             triggers.forEach(trigger => {
                 trigger.addEventListener('click', function () {
                     const content = this.nextElementSibling;
@@ -722,7 +706,6 @@ About Section
                     const allContents = accordion.querySelectorAll('.accordion-content');
                     const allIcons = accordion.querySelectorAll('.accordion-trigger svg');
                     
-                    // Close all other items
                     allContents.forEach(item => {
                         if (item !== content) {
                             item.style.maxHeight = null;
@@ -735,7 +718,6 @@ About Section
                         }
                     });
 
-                    // Toggle the clicked item
                     if (content.style.maxHeight) {
                         content.style.maxHeight = null;
                         content.classList.add('accordion-content-closed');
@@ -747,6 +729,42 @@ About Section
                     }
                 });
             });
+        }
+
+        // --- NOUVEAU : Scroll Reveal (uniquement pour les écrans larges) ---
+        if (window.innerWidth >= 768) { // Le breakpoint 'md' de Tailwind est 768px
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '60px',
+                duration: 1000,
+                delay: 200,
+                reset: false // L'animation ne se joue qu'une fois
+            });
+
+            // Animations générales
+            sr.reveal('h2, h3', { origin: 'top' });
+
+            // Section "À propos"
+            sr.reveal('#about .grid > div:first-child', { origin: 'left' });
+            sr.reveal('#about .grid > div:last-child', { origin: 'right' });
+            sr.reveal('#about .space-y-8 > div', { interval: 150 });
+
+            // Sections avec des cartes en grille
+            sr.reveal('#accompagnements .grid > div, #testimonials .grid > div', { interval: 150 });
+            
+            // Sections avec des listes verticales
+            sr.reveal('#approach .space-y-8 > div, #faq-accordion > div', { interval: 100 });
+            
+            // Section "Cabinet"
+            sr.reveal('#cabinet .grid > div:first-child', { origin: 'left' });
+            sr.reveal('#cabinet .grid > div:last-child', { origin: 'right' });
+
+            // Section "Booking"
+            sr.reveal('#booking .bg-card', { scale: 0.95, duration: 1200 });
+
+            // Section "Contact"
+            sr.reveal('#contact .grid > div:first-child', { origin: 'left' });
+            sr.reveal('#contact .grid > div:last-child', { origin: 'right' });
         }
     });
     </script>
