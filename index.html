@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claire Moreau - Hypnothérapeute à Lyon | Retrouvez Calme et Confiance</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#fafafa',
+            foreground: '#213545',
+            primary: {
+              DEFAULT: '#568f6e',
+              foreground: '#fafafa',
+            },
+            muted: {
+              foreground: '#7b999f',
+            },
+            accent: {
+              DEFAULT: '#f0f5f2',
+              deep: '#4a795d'
+            },
+            calm: {
+              DEFAULT: '#f8f8f8',
+              foreground: '#568f6e'
+            },
+            card: {
+              DEFAULT: '#ffffff',
+              foreground: '#213545',
+            },
+            border: '#e4e4e4',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+    </script>
+    
+    <!-- Custom Styles for shadows and gradients -->
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .shadow-soft {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .shadow-gentle {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+      }
+      .shadow-floating {
+        box-shadow: 0 12px 30px rgba(86, 143, 110, 0.25);
+      }
+      .transition-gentle {
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+      .hover\:shadow-gentle:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+        transform: translateY(-2px);
+      }
+      .hover\:shadow-floating:hover {
+        box-shadow: 0 12px 30px rgba(86, 143, 110, 0.25);
+        transform: scale(1.05);
+      }
+      .gradient-hero {
+        background-image: radial-gradient(circle, rgba(250, 250, 250, 0.9) 0%, rgba(250, 250, 250, 0.7) 40%, rgba(250, 250, 250, 0) 70%);
+      }
+      .gradient-section {
+        background-image: linear-gradient(to bottom, #fafafa, #f8f8f8);
+      }
+      .gradient-card {
+        background-color: #ffffff;
+        border: 1px solid #f0f0f0;
+      }
+      /* Accordion transition styles */
+      .accordion-content {
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .accordion-content-closed {
+        max-height: 0;
+      }
+    </style>
+</head>
+
+<body class="bg-background text-foreground">
+    <div id="root">
+        <!-- =================================================================
+        Navigation Bar Section
+        ================================================================== -->
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/90 backdrop-blur-sm shadow-soft">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center justify-between h-20">
+                    <a href="#" class="font-bold text-xl text-primary">Claire Moreau</a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#about" class="text-foreground hover:text-primary transition-colors">À propos</a>
+                        <a href="#accompagnements" class="text-foreground hover:text-primary transition-colors">Accompagnements</a>
+                        <a href="#contact" class="text-foreground hover:text-primary transition-colors">Contact</a>
+                    </div>
+                    <a href="#booking" class="hidden sm:inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-10 px-4 py-2">
+                        Prendre rendez-vous
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+                 <a href="#about" class="block text-foreground hover:text-primary transition-colors py-2">À propos</a>
+                 <a href="#accompagnements" class="block text-foreground hover:text-primary transition-colors py-2">Accompagnements</a>
+                 <a href="#contact" class="block text-foreground hover:text-primary transition-colors py-2">Contact</a>
+                 <a href="#booking" class="block w-full text-center bg-primary text-primary-foreground rounded-md py-2 mt-2">Prendre rendez-vous</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- =================================================================
+            Hero Section
+            ================================================================== -->
+            <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=1912&auto=format&fit=crop');"></div>
+                <div class="absolute inset-0 gradient-hero"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="max-w-4xl text-center md:text-left">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
+                            Retrouvez votre calme intérieur.
+                            <span class="block text-primary mt-2">Libérez votre plein potentiel.</span>
+                        </h1>
+                        <p class="text-lg lg:text-xl text-muted-foreground mb-10 max-w-3xl leading-relaxed mx-auto md:mx-0">
+                            L'hypnothérapie, une approche douce et pragmatique pour apaiser votre anxiété, transformer votre stress et renforcer durablement votre confiance en vous. Accompagnement à Lyon et en visio.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#accompagnements" class="inline-flex items-center justify-center whitespace-nowrap bg-primary text-primary-foreground shadow-gentle py-4 font-semibold transition-all duration-300 hover:shadow-floating h-14 rounded-lg px-10 text-lg w-full sm:w-auto">Découvrir mes accompagnements</a>
+                            <a href="#about" class="inline-flex items-center justify-center whitespace-nowrap bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-primary-foreground py-4 font-medium transition-all duration-300 hover:shadow-gentle h-14 rounded-lg px-10 text-lg w-full sm:w-auto">Qui suis-je ?</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+            About Section
+            ================================================================== -->
+            <section id="about" class="py-24 gradient-section">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-primary">Mon chemin vers l'hypnose, votre guide vers la sérénité</h2>
+                        <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                            <div class="flex justify-center lg:justify-start">
+                                <div class="relative">
+                                    <div class="w-80 h-80 rounded-2xl overflow-hidden shadow-gentle">
+                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Claire Moreau, Hypnothérapeute à Lyon" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/10 pointer-events-none"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <div class="gradient-card rounded-2xl p-8 shadow-soft">
+                                    <h3 class="text-2xl font-semibold text-primary mb-4">Claire Moreau</h3>
+                                    <p class="text-lg leading-relaxed text-foreground mb-4">Hypnothérapeute certifiée en Hypnose Ericksonienne</p>
+                                    <p class="text-foreground leading-relaxed">Après plus de dix ans dans le marketing, j'ai découvert ma vocation : accompagner les femmes actives vers plus de sérénité et de confiance en elles. Mon approche allie pragmatisme et bienveillance pour vous aider à retrouver votre équilibre intérieur.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">Pendant plus de dix ans, j'ai navigué dans l'univers exigeant du marketing. Un monde passionnant, mais qui m'a peu à peu fait perdre pied. Les journées à rallonge, la pression constante de la performance et la charge mentale m'ont conduite là où beaucoup d'entre nous se retrouvent : dans le brouillard du surmenage. L'anxiété était devenue ma compagne de route, les nuits courtes, et la confiance en moi, un lointain souvenir. Je connais intimement cette sensation d'être un funambule sur un fil, cherchant désespérément un équilibre qui semble impossible à atteindre.</p>
+                            </div>
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">C'est dans cette quête de solutions que j'ai poussé la porte d'un cabinet d'hypnothérapie. Sans attente particulière, mais avec un immense besoin d'aide. Ce fut une révélation. Loin des clichés, j'ai découvert une approche incroyablement respectueuse et pragmatique. J'ai compris que l'hypnose n'était pas une perte de contrôle, mais au contraire, une formidable façon d'en reprendre. C'était une conversation avec la partie la plus sage de moi-même, celle qui avait les clés pour apaiser mes peurs et réactiver mes ressources. Cette expérience a transformé ma vie.</p>
+                            </div>
+                            <div class="gradient-card rounded-2xl p-8 shadow-soft transition-gentle">
+                                <p class="text-lg leading-relaxed text-foreground">Cette transformation a fait naître en moi une évidence : je devais à mon tour transmettre ces outils. J'ai alors entrepris une formation certifiante rigoureuse en Hypnose Ericksonienne pour faire de cette passion mon métier. Aujourd'hui, ma mission est de vous accompagner sur ce même chemin. Je ne suis pas là pour vous donner des réponses magiques, mais pour vous guider, avec douceur et sans jugement, à trouver les vôtres. Mon approche est teintée de mon parcours : pragmatique, ancrée dans le réel, et profondément convaincue que vous possédez déjà en vous toutes les ressources pour aller mieux.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            Services Section
+            ================================================================== -->
+            <section id="accompagnements" class="py-24 bg-background">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Des accompagnements pour vous retrouver</h2>
+                        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Chaque parcours est unique. Je vous propose un cadre bienveillant et des outils sur-mesure pour vous aider à atteindre vos objectifs, à votre rythme.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <!-- Service Card 1 -->
+                        <div class="gradient-card shadow-soft hover:shadow-gentle transition-gentle border-0 h-full flex flex-col rounded-2xl">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-xl font-semibold mb-3 leading-tight text-foreground">Séance Clarté : Votre Premier Pas</h3>
+                            </div>
+                            <div class="p-6 pt-0 flex-1 flex flex-col">
+                                <p class="text-muted-foreground mb-6 leading-relaxed flex-1">Cette première séance de 1h30 est un temps d'échange privilégié. C'est l'occasion de déposer ce qui vous pèse, de clarifier vos attentes et de faire l'expérience d'une première séance d'hypnose douce. L'objectif est simple : que vous repartiez avec une meilleure compréhension de votre situation et une sensation tangible d'apaisement.</p>
+                                <div class="space-y-4 mt-auto">
+                                    <div class="bg-accent rounded-lg p-4">
+                                        <p class="text-sm font-medium text-accent-deep mb-2">Pour qui ?</p>
+                                        <p class="text-sm text-foreground">Idéal pour une première découverte, pour cibler une problématique précise ou si vous hésitez à vous engager dans un accompagnement plus long.</p>
+                                    </div>
+                                    <div class="flex items-center justify-between py-3 border-t border-border">
+                                        <span class="font-medium text-foreground">1h30</span>
+                                        <span class="text-2xl font-bold text-primary">80€</span>
+                                    </div>
+                                    <a href="#booking" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-10 px-4 py-2 w-full">Réserver ma séance clarté</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="gradient-card shadow-soft hover:shadow-gentle transition-gentle border-0 h-full flex flex-col rounded-2xl">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-xl font-semibold mb-3 leading-tight text-foreground">Parcours Sérénité : Un Accompagnement sur Mesure</h3>
+                            </div>
+                            <div class="p-6 pt-0 flex-1 flex flex-col">
+                                <p class="text-muted-foreground mb-6 leading-relaxed flex-1">Pour une transformation durable, un accompagnement de plusieurs séances est souvent nécessaire. Le Parcours Sérénité est un programme personnalisé de 5 séances, espacées de 1 à 2 semaines, pour travailler en profondeur sur vos blocages, ancrer de nouveaux comportements et vous rendre pleinement autonome dans la gestion de vos émotions.</p>
+                                <div class="space-y-4 mt-auto">
+                                    <div class="bg-accent rounded-lg p-4">
+                                        <p class="text-sm font-medium text-accent-deep mb-2">Pour qui ?</p>
+                                        <p class="text-sm text-foreground">Recommandé pour l'anxiété chronique, les troubles du sommeil, le manque de confiance profond ou un objectif de changement de vie important.</p>
+                                    </div>
+                                    <div class="flex items-center justify-between py-3 border-t border-border">
+                                        <span class="font-medium text-foreground">Forfait 5 séances</span>
+                                        <span class="text-2xl font-bold text-primary">350€</span>
+                                    </div>
+                                    <a href="#booking" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-10 px-4 py-2 w-full">Commencer mon parcours</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="gradient-card shadow-soft hover:shadow-gentle transition-gentle border-0 h-full flex flex-col rounded-2xl">
+                            <div class="p-6 pb-4">
+                                <h3 class="text-xl font-semibold mb-3 leading-tight text-foreground">Focus Confiance : Ciblez vos Blocages</h3>
+                            </div>
+                            <div class="p-6 pt-0 flex-1 flex flex-col">
+                                <p class="text-muted-foreground mb-6 leading-relaxed flex-1">Vous devez prendre la parole en public ? Vous préparez un examen ou un entretien important ? Ce format court et intensif de 3 séances est conçu pour débloquer votre potentiel et renforcer votre confiance en vous face à un événement spécifique. Nous travaillons sur la visualisation positive et l'activation de vos ressources pour que vous abordiez votre défi avec calme et assurance.</p>
+                                <div class="space-y-4 mt-auto">
+                                    <div class="bg-accent rounded-lg p-4">
+                                        <p class="text-sm font-medium text-accent-deep mb-2">Pour qui ?</p>
+                                        <p class="text-sm text-foreground">Parfait pour les étudiants, les managers, les entrepreneurs, ou toute personne faisant face à un challenge précis.</p>
+                                    </div>
+                                    <div class="flex items-center justify-between py-3 border-t border-border">
+                                        <span class="font-medium text-foreground">Forfait 3 séances</span>
+                                        <span class="text-2xl font-bold text-primary">220€</span>
+                                    </div>
+                                    <a href="#booking" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-10 px-4 py-2 w-full">Préparer mon objectif</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            Approach Section
+            ================================================================== -->
+            <section class="py-24 gradient-section">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Le déroulé d'une séance, en toute sérénité</h2>
+                        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Faire le premier pas peut être intimidant. Pour que vous vous sentiez en parfaite confiance, voici les trois grandes étapes qui rythment chacune de nos rencontres.</p>
+                    </div>
+                    <div class="max-w-4xl mx-auto space-y-8">
+                        <!-- Step 1 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle rounded-2xl p-6">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold leading-tight text-foreground mb-2">L'Échange : Un temps pour vous écouter</h3>
+                                    <p class="text-muted-foreground leading-relaxed">Chaque séance débute par un moment de conversation bienveillante. C'est votre espace pour partager, sans aucun jugement, vos ressentis, vos défis et vos objectifs. Cet échange précieux me permet de comprendre votre univers et de personnaliser entièrement la séance d'hypnose qui suivra.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle rounded-2xl p-6">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold leading-tight text-foreground mb-2">Le Voyage Intérieur : La pratique de l'hypnose</h3>
+                                    <p class="text-muted-foreground leading-relaxed">Confortablement installé(e), vous vous laissez simplement guider par ma voix. L'état d'hypnose est un état de relaxation profonde, similaire à une rêverie, où votre esprit conscient se met en retrait pour laisser émerger votre immense potentiel de changement. Vous restez maître de la séance à chaque instant. Il n'y a rien à "réussir", juste à accueillir l'expérience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle rounded-2xl p-6">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-semibold leading-tight text-foreground mb-2">L'Intégration : Repartir avec des clés</h3>
+                                    <p class="text-muted-foreground leading-relaxed">Nous terminons par un court débriefing pour ancrer les sensations positives et les prises de conscience. Souvent, je vous proposerai un exercice d'auto-hypnose simple à pratiquer chez vous. L'objectif est que vous repartiez non seulement apaisé(e), mais aussi avec des outils concrets pour cultiver votre bien-être au quotidien.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            Cabinet Section
+            ================================================================== -->
+            <section class="py-24 bg-background">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="space-y-6">
+                                <h2 class="text-3xl md:text-4xl font-bold text-primary">Un cocon de sérénité au cœur de Lyon</h2>
+                                <p class="text-lg leading-relaxed text-foreground">Loin de l'agitation de la ville, j'ai conçu mon cabinet comme une bulle de tranquillité. Situé dans le 6ème arrondissement, c'est un espace lumineux et chaleureux où vous pourrez vous déposer en toute confidentialité.</p>
+                                <p class="text-lg leading-relaxed text-foreground">Dès la porte franchie, mon intention est que vous vous sentiez en sécurité, écouté(e) et prêt(e) à commencer votre voyage intérieur. Chaque détail, du fauteuil confortable à la lumière douce, a été pensé pour votre confort et votre bien-être.</p>
+                            </div>
+                            <div class="relative">
+                                <div class="rounded-2xl overflow-hidden shadow-gentle">
+                                    <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=1887&auto=format&fit=crop" alt="Cabinet d'hypnothérapie de Claire Moreau à Lyon" class="w-full h-full object-cover">
+                                </div>
+                                <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================================================
+            Testimonials Section
+            ================================================================== -->
+            <section class="py-24 gradient-section">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Leurs mots, votre confiance</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <!-- Testimonial 1 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle hover:shadow-gentle h-full flex flex-col rounded-2xl">
+                            <div class="p-8 flex-1 flex flex-col">
+                                <blockquote class="text-foreground leading-relaxed mb-6 flex-1 italic">"Avant de rencontrer Claire, j'étais constamment submergée par le stress du travail. Mes nuits étaient courtes et mes journées, une course sans fin. Dès la première séance, son écoute et sa douceur m'ont permis de lâcher prise. L'hypnose m'a donné des outils concrets que j'utilise tous les jours au bureau. Aujourd'hui, je me sens plus calme, je dors mieux et j'aborde mes défis professionnels avec une confiance que je ne pensais plus avoir. C'est un vrai changement."</blockquote>
+                                <div class="mt-auto pt-6 border-t border-border/50">
+                                    <div class="font-semibold text-primary text-lg">Manon L.</div>
+                                    <p class="text-sm text-muted-foreground">Accompagnement Gestion du Stress, Lyon</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle hover:shadow-gentle h-full flex flex-col rounded-2xl">
+                            <div class="p-8 flex-1 flex flex-col">
+                                <blockquote class="text-foreground leading-relaxed mb-6 flex-1 italic">"J'avais une peur panique de prendre la parole en public pour une présentation cruciale. Je perdais mes moyens et mes idées s'embrouillaient. L'accompagnement "Focus Confiance" avec Claire a été un déclic. En seulement trois séances, nous avons travaillé sur l'origine de ce blocage et ancré des ressources de calme et d'assurance. Le jour J, j'étais serein et ma présentation a été un succès. Je n'aurais jamais cru cela possible."</blockquote>
+                                <div class="mt-auto pt-6 border-t border-border/50">
+                                    <div class="font-semibold text-primary text-lg">Julien P.</div>
+                                    <p class="text-sm text-muted-foreground">Accompagnement Prise de Parole, en visio</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="gradient-card shadow-soft border-0 transition-gentle hover:shadow-gentle h-full flex flex-col rounded-2xl">
+                            <div class="p-8 flex-1 flex flex-col">
+                                <blockquote class="text-foreground leading-relaxed mb-6 flex-1 italic">"Je ne savais pas vraiment à quoi m'attendre avec l'hypnose en visio, mais j'ai été bluffée. Le professionnalisme et la présence de Claire traversent l'écran. Elle a su créer un vrai cocon de sécurité, même à distance. Cet accompagnement m'a aidée à traverser une période de vie compliquée avec beaucoup plus de douceur envers moi-même. Une expérience profondément humaine et transformatrice."</blockquote>
+                                <div class="mt-auto pt-6 border-t border-border/50">
+                                    <div class="font-semibold text-primary text-lg">Sophie T.</div>
+                                    <p class="text-sm text-muted-foreground">Parcours Sérénité, en visio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            FAQ Section
+            ================================================================== -->
+            <section class="py-24 bg-background">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Vos questions, mes réponses</h2>
+                        </div>
+                        <div id="faq-accordion" class="space-y-4">
+                            <!-- FAQ Item 1 -->
+                            <div class="gradient-card rounded-xl border-0 shadow-soft">
+                                <button class="accordion-trigger flex w-full items-center justify-between text-left p-6">
+                                    <span class="text-lg font-medium text-primary pr-4">Je n'ai jamais fait d'hypnose, est-ce que je vais perdre le contrôle ?</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </button>
+                                <div class="accordion-content accordion-content-closed">
+                                    <p class="text-muted-foreground leading-relaxed px-6 pb-6">C'est une crainte très fréquente et tout à fait légitime ! Et la réponse est non, bien au contraire. L'état d'hypnose est un état de conscience modifié naturel, que vous expérimentez plusieurs fois par jour (quand vous êtes "dans la lune", absorbé par un livre...). Vous restez conscient(e) de tout ce qui se passe et vous pouvez sortir de cet état à tout moment si vous le souhaitez. Mon rôle est simplement de vous guider pour que vous puissiez utiliser cet état à votre avantage et accéder à vos propres ressources.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 -->
+                            <div class="gradient-card rounded-xl border-0 shadow-soft">
+                                <button class="accordion-trigger flex w-full items-center justify-between text-left p-6">
+                                    <span class="text-lg font-medium text-primary pr-4">Combien de séances faut-il prévoir pour voir des résultats ?</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </button>
+                                <div class="accordion-content accordion-content-closed">
+                                    <p class="text-muted-foreground leading-relaxed px-6 pb-6">Chaque personne et chaque histoire est unique. Des bienfaits, comme une profonde sensation de détente, sont souvent ressentis dès la première séance. Pour des changements plus profonds et durables, comme pour l'anxiété chronique, un accompagnement de 5 à 8 séances est généralement un bon cadre. Le plus important est que nous avancerons toujours à votre rythme, et nous ferons le point ensemble pour ajuster le parcours à vos besoins réels.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 3 -->
+                            <div class="gradient-card rounded-xl border-0 shadow-soft">
+                                <button class="accordion-trigger flex w-full items-center justify-between text-left p-6">
+                                    <span class="text-lg font-medium text-primary pr-4">L'hypnothérapie remplace-t-elle un suivi médical ou psychologique ?</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </button>
+                                <div class="accordion-content accordion-content-closed">
+                                    <p class="text-muted-foreground leading-relaxed px-6 pb-6">C'est une question essentielle. Mon accompagnement en hypnothérapie est une approche complémentaire qui vise le bien-être et le développement personnel. Elle ne se substitue en aucun cas à un diagnostic, un traitement médical ou un suivi avec un psychologue ou un psychiatre. Je travaille en totale collaboration avec le corps médical et vous encouragerai toujours à consulter votre médecin pour toute question relative à votre santé.</p>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 4 -->
+                            <div class="gradient-card rounded-xl border-0 shadow-soft">
+                                <button class="accordion-trigger flex w-full items-center justify-between text-left p-6">
+                                    <span class="text-lg font-medium text-primary pr-4">Est-ce que les séances en visio sont aussi efficaces qu'en cabinet ?</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </button>
+                                <div class="accordion-content accordion-content-closed">
+                                    <p class="text-muted-foreground leading-relaxed px-6 pb-6">Oui, absolument. L'efficacité de l'hypnose repose sur la qualité de la relation de confiance et sur ma guidance vocale. Que vous soyez dans mon cabinet ou dans le confort de votre salon, l'expérience est tout aussi profonde et transformatrice. Il vous suffit d'avoir une bonne connexion internet, un endroit calme où vous ne serez pas dérangé(e), et des écouteurs pour une immersion optimale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            Booking Section
+            ================================================================== -->
+            <section id="booking" class="py-24 gradient-section">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Prêt(e) à faire le premier pas ?</h2>
+                        <p class="text-lg text-muted-foreground mb-12">Choisissez simplement le créneau qui vous convient dans l'agenda ci-dessous. C'est simple, confidentiel et vous recevrez une confirmation instantanément.</p>
+                        <div class="gradient-card rounded-2xl p-8 md:p-12 shadow-gentle">
+                            <div class="space-y-6">
+                                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <h3 class="text-2xl font-semibold text-primary mb-4">Calendrier de réservation</h3>
+                                <p class="text-muted-foreground mb-8">Ici sera intégré votre système de réservation en ligne (Calendly, Doctolib, etc.)</p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-11 rounded-md px-8">Réserver en ligne</button>
+                                    <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium bg-calm text-calm-foreground hover:bg-calm/90 border border-calm-foreground/20 h-11 rounded-md px-8">Appeler directement</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- =================================================================
+            Contact Section
+            ================================================================== -->
+            <section id="contact" class="py-24 bg-background">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-primary">Contact & Accès</h2>
+                            <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Vous avez une question avant de vous lancer ? Vous préférez un premier contact par email ou téléphone ? N'hésitez pas. Retrouvez ici toutes les informations pour échanger ou pour vous rendre au cabinet en toute sérénité.</p>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-12">
+                            <div class="space-y-8">
+                                <!-- Coordinates Card -->
+                                <div class="gradient-card shadow-soft border-0 rounded-2xl p-6">
+                                    <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary flex items-center gap-3 mb-6">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                        Coordonnées
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <div><p class="font-medium text-foreground">Adresse</p><p class="text-muted-foreground">25 Rue de la République, 69006 Lyon</p></div>
+                                        <div><p class="font-medium text-foreground">Téléphone</p><p class="text-muted-foreground">06 12 34 56 78</p></div>
+                                        <div><p class="font-medium text-foreground">Email</p><p class="text-muted-foreground">claire.moreau.hypno@email.com</p></div>
+                                        <div><p class="font-medium text-foreground">Horaires</p><p class="text-muted-foreground">Sur rendez-vous, du Lundi au Vendredi, de 9h à 19h</p></div>
+                                    </div>
+                                </div>
+                                <!-- Transport Card -->
+                                <div class="gradient-card shadow-soft border-0 rounded-2xl p-6">
+                                    <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary flex items-center gap-3 mb-6">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                                        Accès & Transports
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <div><p class="font-medium text-foreground">Métro</p><p class="text-muted-foreground">Ligne A, arrêt "Foch" (à 3 minutes à pied)</p></div>
+                                        <div><p class="font-medium text-foreground">Stationnement</p><p class="text-muted-foreground">Parking public "Tête d'Or" à 400m. Stationnement payant dans la rue</p></div>
+                                        <div><p class="font-medium text-foreground">Précisions d'arrivée</p><p class="text-muted-foreground">3ème étage (avec ascenseur). Entrée à côté de la boulangerie. Interphone "C. MOREAU - Hypnothérapeute"</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Contact Form Card -->
+                            <div class="gradient-card shadow-soft border-0 h-fit rounded-2xl p-6">
+                                <h3 class="text-2xl font-semibold leading-none tracking-tight text-primary mb-6">Envoyez-moi un message</h3>
+                                <form class="space-y-6">
+                                    <div class="space-y-2"><label class="text-sm font-medium leading-none" for="name">Nom</label><input class="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 md:text-sm" id="name" name="name" placeholder="Votre nom complet"></div>
+                                    <div class="space-y-2"><label class="text-sm font-medium leading-none" for="email">Email</label><input type="email" class="flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 md:text-sm" id="email" name="email" placeholder="votre.email@exemple.com"></div>
+                                    <div class="space-y-2"><label class="text-sm font-medium leading-none" for="message">Votre Message</label><textarea class="flex w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 min-h-[120px]" id="message" name="message" placeholder="Partagez-moi ce qui vous amène, vos questions ou vos préoccupations..."></textarea></div>
+                                    <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft transition-all duration-300 hover:shadow-gentle hover:scale-105 h-10 px-4 py-2 w-full" type="submit">Envoyer mon message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- =================================================================
+        Footer Section
+        ================================================================== -->
+        <footer class="bg-primary text-primary-foreground">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-8 py-16">
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold mb-2">Contact</h4>
+                        <div class="space-y-3 text-primary-foreground/90">
+                            <p class="flex items-start gap-3"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span>25 Rue de la République<br>69006 Lyon</span></p>
+                            <p class="flex items-center gap-3"><svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>06 12 34 56 78</p>
+                            <p class="flex items-center gap-3"><svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>claire.moreau.hypno@email.com</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold mb-2">Navigation</h4>
+                        <div class="space-y-3">
+                            <a href="#about" class="block text-primary-foreground/90 hover:text-primary-foreground transition-colors text-left">À propos</a>
+                            <a href="#accompagnements" class="block text-primary-foreground/90 hover:text-primary-foreground transition-colors text-left">Mes accompagnements</a>
+                            <a href="#contact" class="block text-primary-foreground/90 hover:text-primary-foreground transition-colors text-left">Contact & Accès</a>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold mb-2">Informations pratiques</h4>
+                        <div class="space-y-3 text-primary-foreground/90">
+                            <div><p class="font-medium text-primary-foreground mb-1">Horaires</p><p>Lundi au Vendredi<br>9h - 19h sur rendez-vous</p></div>
+                            <div><p class="font-medium text-primary-foreground mb-1">Consultations</p><p>Cabinet à Lyon 6ème<br>Visioconférence</p></div>
+                            <div><p class="font-medium text-primary-foreground mb-1">Méthode</p><p>Hypnose Ericksonienne</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-primary-foreground/20 py-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+                        <p class="text-primary-foreground/80 text-sm">© 2024 Claire Moreau - Hypnothérapeute. Tous droits réservés.</p>
+                        <div class="flex items-center gap-4 text-sm text-primary-foreground/80">
+                            <span>SIRET : 123 456 789 00012</span>
+                            <span>•</span>
+                            <span>Certifiée FFHTB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- Smooth Scrolling ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                    // Scroll to element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- FAQ Accordion ---
+        const accordion = document.getElementById('faq-accordion');
+        if (accordion) {
+            const triggers = accordion.querySelectorAll('.accordion-trigger');
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('svg');
+                    const allContents = accordion.querySelectorAll('.accordion-content');
+                    const allIcons = accordion.querySelectorAll('.accordion-trigger svg');
+                    
+                    // Close all other items
+                    allContents.forEach(item => {
+                        if (item !== content) {
+                            item.style.maxHeight = null;
+                            item.classList.add('accordion-content-closed');
+                        }
+                    });
+                     allIcons.forEach(itemIcon => {
+                        if (itemIcon !== icon) {
+                           itemIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.classList.add('accordion-content-closed');
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.classList.remove('accordion-content-closed');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
