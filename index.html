@@ -136,13 +136,16 @@
         </nav>
 
         <main>
+
+                    <main>
             <!-- =================================================================
             Hero Section
             ================================================================== -->
             <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
-                <!-- MODIFIÉ : Le style en ligne a été retiré et remplacé par une classe CSS -->
-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 hero-background"></div>
-                <div class="absolute inset-0 gradient-hero"></div>
+                <!-- MODIFIÉ : Les deux divs de fond ont été remplacés par un seul pour un meilleur contrôle. -->
+                <!-- Le dégradé est maintenant linéaire pour préserver la lisibilité du texte à gauche tout en révélant mieux l'image à droite. -->
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(250, 250, 250, 0.95) 25%, rgba(250, 250, 250, 0.4) 60%, transparent), url('images/hero-background.webp');"></div>
+                
                 <div class="container mx-auto px-6 relative z-10">
                     <div class="max-w-4xl text-center md:text-left">
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground leading-tight">
@@ -159,6 +162,7 @@
                     </div>
                 </div>
             </section>
+            
 
             <!-- =================================================================
 About Section
